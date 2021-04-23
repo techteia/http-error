@@ -18,6 +18,11 @@ const generate = (id='UNKNOWN ERROR',status=null,message=null) => {
       error.status = 401;
       error.message = 'The request requires user authentication.';
       break;
+    case 'FORBIDDEN':
+      // error.id = 'UNAUTHORIZED';
+      error.status = 403;
+      error.message = 'The client does not have the rights to the content.';
+      break;
     case 'INVALID TOKEN':
       // error.id = 'UNAUTHORIZED';
       error.status = 401;
