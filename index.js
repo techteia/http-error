@@ -52,14 +52,20 @@ const generate = (id='UNKNOWN ERROR',status=null,message=null) => {
       error.status = 400;
       error.message = 'Required header(s) are invalid or missing.';
       break;
-    case 'USER VALIDATION FAILED':
-      error.status = 400;
-      error.message = 'The email entered is invalid.';
+    case 'PAGE NOT FOUND':
+      error.status = 404;
+      // error.message = 'The server has not found anything matching the Request URI.';
+      error.message = 'The server can not find the requested URI.';
       break;
     case 'PASSWORD VALIDATION FAILED':
       error.status = 400;
       error.message = 'The password does not meet the required criteria.';
       break;
+    case 'USER VALIDATION FAILED':
+      error.status = 400;
+      error.message = 'The email entered is invalid.';
+      break;
+    
     case 'UNAUTHORIZED':
       error.status = 401;
       error.message = 'The request requires user authentication.';
